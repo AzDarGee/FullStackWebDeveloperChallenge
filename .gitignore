@@ -1,0 +1,9 @@
+frontend/node_modules
+
+
+api/.bundle
+api/log/*
+api/tmp/*
+api/tmp/pids/*
+api/storage/*
+api/config/master.key
