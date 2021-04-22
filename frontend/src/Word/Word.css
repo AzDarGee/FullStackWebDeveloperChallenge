@@ -1,0 +1,11 @@
+#word-list-item {
+
+}
+
+.word-list-container {
+    flex-grow: 0;
+}
+
+.word-item-container {
+    display: contents;
+}

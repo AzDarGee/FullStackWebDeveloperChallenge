@@ -15,7 +15,10 @@ class WordsController < ApplicationController
 
   # POST /words
   def create
-    @word = Word.new(word_params)
+    book_title = params[:from_book]
+
+    @word = Word.new
+    @word.from_book = book_title
 
     if @word.save
       render json: @word, status: :created, location: @word
@@ -38,6 +41,15 @@ class WordsController < ApplicationController
     @word.destroy
   end
 
+  def find_words
+    searchTerm = params[:searchTerm]
+
+    @words = Word.where("word ILIKE ?", "%" + searchTerm + "%").limit(3)
+
+    render json: @words
+  end
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_word
@@ -46,6 +58,6 @@ class WordsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def word_params
-      params.fetch(:word, {})
+      params.fetch(:word, {}).permit(:from_book)
     end
 end

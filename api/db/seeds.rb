@@ -8,15 +8,33 @@
 
 
 path = Rails.root.join("public/corpus/hemingway.txt")
-
-file = File.readlines(path, chomp: true)
-
 data = []
 
-i = 0
-file.each do |line|
-    data << { line: line, placement: i }
-    i += 1
+file = File.open(path, "r") do |f|
+    f.each_line do |line|
+        data.push(*line.split.map(&:to_s))
+    end
 end
+
+# Seed database with the unique words from the book
+data.uniq.each do |word|
+    begin
+        Word.create!(
+            :word => word,
+            :from_book => "The Old Man & The Sea"
+        )
+    rescue StandardError => e
+        puts "Rescued: #{e.inpsect}"
+        next
+    end
+end
+
+# i = 0
+# file.each do |line|
+#     data << { line: line, placement: i }
+#     i += 1
+# end
+
+
 
 binding.pry

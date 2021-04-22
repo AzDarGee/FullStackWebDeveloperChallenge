@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_21_224520) do
+ActiveRecord::Schema.define(version: 2021_04_22_184114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "words", force: :cascade do |t|
-    t.text "text"
-    t.json "book_words"
-    t.string "book_title"
+    t.string "word"
+    t.string "from_book"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["word"], name: "index_words_on_word"
   end
 
 end
