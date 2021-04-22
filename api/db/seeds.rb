@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+path = Rails.root.join("public/corpus/hemingway.txt")
+
+file = File.readlines(path, chomp: true)
+
+data = []
+
+i = 0
+file.each do |line|
+    data << { line: line, placement: i }
+    i += 1
+end
+
+binding.pry
