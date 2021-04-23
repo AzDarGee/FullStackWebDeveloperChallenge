@@ -17,11 +17,6 @@ class WordForm extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    handleAddWord(event) {
-        event.preventDefault();
-        this.formSubmit(event.target);
-    }
-
     async handleSearchWord(event) {
         event.preventDefault();
         var searchURL = this.state.words_url + this.state.inputValue;
@@ -32,6 +27,11 @@ class WordForm extends Component {
         }).then(response => response.json())
         .then(response => this.props.updateSearchWordsList(response))
         .catch(error => console.log(error))
+    }
+
+    handleAddWord(event) {
+        event.preventDefault();
+        this.formSubmit(event.target);
     }
 
     async formSubmit(formData) {
@@ -70,6 +70,17 @@ class WordForm extends Component {
                     <Button 
                         variant="contained"
                         color="primary"
+                        key="2"
+                        type="submit"
+                        id="add-word-submit"
+                        value="submit2"
+                        name="submit2">
+                    Add
+                    </Button>
+
+                    <Button 
+                        variant="contained"
+                        color="primary"
                         type="button"
                         key="1"
                         id="search-word-submit"
@@ -77,17 +88,6 @@ class WordForm extends Component {
                         name="submit1"
                         onClick={this.handleSearchWord}>
                     Search
-                    </Button>
-
-                    <Button 
-                        variant="contained"
-                        color="primary"
-                        key="2"
-                        type="submit"
-                        id="add-word-submit"
-                        value="submit2"
-                        name="submit2">
-                    Add
                     </Button>
 
                     <Button 

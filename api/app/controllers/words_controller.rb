@@ -3,7 +3,7 @@ class WordsController < ApplicationController
 
   # GET /words
   def index
-    @words = Word.all.order("id DESC").limit(10)
+    @words = Word.all.order("id DESC").limit(100)
 
     render json: @words
   end

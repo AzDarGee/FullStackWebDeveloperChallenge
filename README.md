@@ -22,3 +22,22 @@ The REST API can be implemented using whatever language and frameworks of your c
 To submit your challenge, fork this repository and provide the link to your forked repository.
 You should also update this README to include instructions on how to run your search engine.
 Tests are not mandatory but will be considered bonus points if you provide them.
+
+## Running the application
+2 servers are needed (one for the backend and one for the frontend)
+
+In the "/api" directory, run:
+
+```
+rake db:setup
+rake db:migrate
+rake db:seed
+rails s
+```
+
+In the "/frontend" directory, run:
+
+```
+npm i
+npm start
+```
