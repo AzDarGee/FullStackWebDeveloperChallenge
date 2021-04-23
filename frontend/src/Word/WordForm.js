@@ -12,28 +12,33 @@ class WordForm extends Component {
             inputValue: ""
         }
         
-        this.searchWords = this.searchWords.bind(this);
-        this.addWord = this.addWord.bind(this);
+        this.handleAddWord = this.handleAddWord.bind(this);
+        this.handleSearchWord = this.handleSearchWord.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    searchWords(event) {
+    handleAddWord(event) {
         event.preventDefault();
         this.formSubmit(event.target);
     }
 
-    addWord(event) {
+    async handleSearchWord(event) {
         event.preventDefault();
-        this.formSubmit(event.target);
+        var searchURL = this.state.words_url + this.state.inputValue;
+
+        await fetch(searchURL, {
+            method: "GET",
+            mode: "cors"
+        }).then(response => response.json())
+        .then(response => this.props.updateSearchWordsList(response))
+        .catch(error => console.log(error))
     }
 
     async formSubmit(formData) {
         var data = new FormData(formData);
+        var addURL = this.state.words_url
 
-        var finalURL = this.state.words_url + "find_words";
-
-
-        await fetch(finalURL, {
+        await fetch(addURL, {
             method: "POST",
             mode: "cors",
             body: data
@@ -50,34 +55,53 @@ class WordForm extends Component {
         return (
             <div>
                 <form
-                    onSubmit={this.addWord}
+                    onSubmit={this.handleAddWord}
                     id="words_form"
                     autoComplete="off">
                    
                     <TextField 
-                        id="restaurant-search-input"
+                        id="word-input"
                         label="Search"
                         variant="outlined"
                         type="text"
-                        name="search"
+                        name="word"
                         onChange={this.handleInputChange} />
-                        
+                    
                     <Button 
                         variant="contained"
                         color="primary"
+                        type="button"
+                        key="1"
+                        id="search-word-submit"
+                        value="submit1"
+                        name="submit1"
+                        onClick={this.handleSearchWord}>
+                    Search
+                    </Button>
+
+                    <Button 
+                        variant="contained"
+                        color="primary"
+                        key="2"
                         type="submit"
-                        id="add-word-submit">
+                        id="add-word-submit"
+                        value="submit2"
+                        name="submit2">
                     Add
                     </Button>
 
                     <Button 
                         variant="contained"
                         color="primary"
+                        key="3"
                         type="button"
-                        id="search-word-submit" 
-                        onClick={this.searchWords}>
-                    Search
+                        id="all-words-submit"
+                        value="submit3"
+                        name="submit3"
+                        onClick={this.props.updateAllWordsList}>
+                    ALL
                     </Button>
+
                 </form>
                 <hr />
             </div>

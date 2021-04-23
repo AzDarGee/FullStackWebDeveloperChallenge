@@ -29,12 +29,4 @@ data.uniq.each do |word|
     end
 end
 
-# i = 0
-# file.each do |line|
-#     data << { line: line, placement: i }
-#     i += 1
-# end
-
-
-
 binding.pry
