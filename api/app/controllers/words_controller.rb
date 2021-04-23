@@ -3,7 +3,7 @@ class WordsController < ApplicationController
 
   # GET /words
   def index
-    @words = Word.all.order("id DESC").limit(100)
+    @words = Word.all.order("id DESC")
 
     render json: @words
   end
@@ -29,12 +29,36 @@ class WordsController < ApplicationController
 
   def find_words
     searchTerm = params[:word]
-
     @words = Word.where("word ILIKE ?", "%" + searchTerm + "%").distinct.limit(3)
-
     render json: @words
   end
   
+  def upload_file
+    path = File.new(params[:file]).path
+
+    data = []
+
+    file = File.open(path, "r") do |f|
+        f.each_line do |line|
+            data.push(*line.split.map(&:to_s))
+        end
+    end
+
+    # Seed database with the unique words from the book
+    data.uniq.each do |word|
+        word = word.gsub(/[[:punct:]]/, '')
+        begin
+            Word.create!(
+                :word => word,
+                :from_book => ""
+            )
+        rescue StandardError => e
+            puts "Rescued word: (#{word}) - #{e.inspect}"
+            next
+        end
+    end
+    index()
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -44,6 +68,6 @@ class WordsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def word_params
-      params.permit(:from_book, :word)
+      params.permit(:from_book, :word, :file)
     end
 end

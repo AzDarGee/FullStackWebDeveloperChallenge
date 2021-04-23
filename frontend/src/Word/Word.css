@@ -13,6 +13,8 @@
 #word-input {
     padding: 1rem;
     margin: 0.5rem;
+    width: 100%;
+    text-align: center;
 }
 
 #search-word-submit {
@@ -31,4 +33,11 @@
     padding: 1rem;
     margin: 0.5rem;
     height: 100%;
+}
+
+#file-upload {
+    padding: 1rem;
+    margin: 0.5rem;
+    height: 100%;
+    width: 
 }

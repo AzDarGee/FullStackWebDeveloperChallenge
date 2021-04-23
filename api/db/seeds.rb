@@ -18,15 +18,14 @@ end
 
 # Seed database with the unique words from the book
 data.uniq.each do |word|
+    word = word.gsub(/[[:punct:]]/, '')
     begin
         Word.create!(
             :word => word,
             :from_book => "The Old Man & The Sea"
         )
     rescue StandardError => e
-        puts "Rescued: #{e.inpsect}"
+        puts "Rescued: (#{word}) - #{e.inspect}"
         next
     end
 end
-
-binding.pry

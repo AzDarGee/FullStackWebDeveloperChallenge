@@ -1,0 +1,16 @@
+During the past decade, mobile development tools have gained popularity as they speed up the transformation of web-based applications to mobile-friendly ones. There are many tools when it comes to building mobile applications, however, I recommend taking the extra time to think about the best tools for what you are building.
+To help you figure out and evaluate the best tools for you, I present 5 factors to consider when choosing the appropriate tool to build your mobile app. These factors can vary in importance depending on the availability of tools, the size of your application is, your budget, and much more.
+Cost
+Building the basic infrastructure, getting licensed development tools, and the process of developing and deploying an application is expensive. Most startups try to use cloud-based services, a quick solution that serves their current need. Using these codeless platforms that feature drag and drop capabilities can be tempting especially due to their low cost and the promise of performing the same work as coded platforms.
+Before taking the decision to use a codeless platform, think about the total cost of using it, not just the current up-front expenses. These short-term solutions might look very attractive, but they are less customizable in the long run. When you need to tailor your product to your users in the future, you as a developer and your administrators will spend much more time trying to redo the work, integrate, and support it. Therefore the benefit and value of using these seemingly low-cost quick solutions vanishes.
+Usability
+How easy is the development tool to use? Does it meet your expectations? Before making any decision or purchase of a tool, you should have a clear understanding of the way it functions. Test any tool you plan on using. Most of them offer free trials and you can watch YouTube videos.
+Talent/Expertise
+If you decide to go with a cloud-based solution for your application which makes it easier in the beginning, you will still need to use your coding skills to customize features because codeless development tools have limited options. Conversely, deciding to work with coded/a cross-platform will require solid experience in writing scripts such as JavaScript, TypeScript, or HTML.
+Overall, just make sure to deeply look at the product you are going to use and see if there is any training that comes with purchasing the package.
+Security
+If you decide to use a mobile development tool, make sure administrators have the ability to use the built-in security controls for any device.
+Regardless of what tools you will use, it has to follow the government restrictions on the data you will be collecting from app users. These quick solutions might serve you and make your life easier, but might not guarantee the minimum security is required.
+Application Lifecycle
+Once you deploy the application, your work is far from done. There are a lot of activities to keep the app up and running from testing, debugging, maintaining, analyzing, deploying again, etc. You need to continuously do these application lifecycle activities.
+With that being said, it is important to keep in mind the long-term solution for your application. Otherwise, you will struggle through these stages of the application lifecycle.
