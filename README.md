@@ -26,6 +26,8 @@ Tests are not mandatory but will be considered bonus points if you provide them.
 ## Running the application
 2 servers are needed (one for the backend and one for the frontend)
 
+You should have postgresql up and running on your system for the rails server to start properly.
+
 In the "/api" directory, run:
 
 ```
@@ -41,3 +43,16 @@ In the "/frontend" directory, run:
 npm i
 npm start
 ```
+
+Images:
+
+Add Words:
+![Screen Shot 2021-04-22 at 10 00 39 PM](https://user-images.githubusercontent.com/4149036/115807373-84a95f80-a3b6-11eb-99f3-f922081b0fdb.png)
+
+Search Words: 3 results returned
+![Screen Shot 2021-04-22 at 10 03 37 PM](https://user-images.githubusercontent.com/4149036/115807434-9c80e380-a3b6-11eb-9d81-3283b109d2d4.png)
+
+Tasks that were taken:
+1. Updated the database with the text from hemingway.txt
+2. Able to query, add, delete from the cloud of words.
+
