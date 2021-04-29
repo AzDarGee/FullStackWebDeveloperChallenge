@@ -4,7 +4,6 @@ class WordsController < ApplicationController
   # GET /words
   def index
     @words = Word.all.order("id DESC")
-
     render json: @words
   end
 
@@ -33,6 +32,7 @@ class WordsController < ApplicationController
     render json: @words
   end
   
+  # POST /words/upload_file
   def upload_file
     path = File.new(params[:file]).path
 

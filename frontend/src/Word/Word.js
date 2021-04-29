@@ -70,6 +70,7 @@ class Word extends Component {
                 items: _items,
                 length: _items.length
             })
+            alert(item.word + " Deleted.");
         })
     }
 
