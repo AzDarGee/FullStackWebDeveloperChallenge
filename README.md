@@ -46,11 +46,14 @@ npm start
 
 Images:
 
+Main App:
+![Screen Shot 2021-04-23 at 1 05 28 PM](https://user-images.githubusercontent.com/4149036/115905846-ae08d080-a434-11eb-87ee-dfa5a97385cb.png)
+
 Add Words:
-![Screen Shot 2021-04-22 at 10 00 39 PM](https://user-images.githubusercontent.com/4149036/115807373-84a95f80-a3b6-11eb-99f3-f922081b0fdb.png)
+![Screen Shot 2021-04-23 at 1 08 53 PM](https://user-images.githubusercontent.com/4149036/115906123-1eafed00-a435-11eb-8f0d-1fef804f640b.png)
 
 Search Words: 3 results returned
-![Screen Shot 2021-04-22 at 10 03 37 PM](https://user-images.githubusercontent.com/4149036/115807434-9c80e380-a3b6-11eb-9d81-3283b109d2d4.png)
+![Screen Shot 2021-04-23 at 1 09 07 PM](https://user-images.githubusercontent.com/4149036/115906133-21aadd80-a435-11eb-9c32-aced56e73c19.png)
 
 Tasks that were taken:
 1. Updated the database with the text from hemingway.txt
