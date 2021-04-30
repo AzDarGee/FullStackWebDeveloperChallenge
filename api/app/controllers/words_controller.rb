@@ -3,7 +3,7 @@ class WordsController < ApplicationController
 
   # GET /words
   def index
-    @words = Word.all.order("id DESC")
+    @words = Word.all.order("id DESC").limit(50)
     render json: @words
   end
 
@@ -69,5 +69,9 @@ class WordsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def word_params
       params.permit(:from_book, :word, :file)
+    end
+
+    def page
+      params[:page] || 1
     end
 end

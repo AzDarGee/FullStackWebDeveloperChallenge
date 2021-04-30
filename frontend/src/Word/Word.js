@@ -70,7 +70,7 @@ class Word extends Component {
                 items: _items,
                 length: _items.length
             })
-            alert(item.word + " Deleted.");
+            alert(item.word + " - Deleted.");
         })
     }
 
@@ -85,6 +85,7 @@ class Word extends Component {
                         updateAllWordsList={this.updateAllWordsList} />
                     <Typography variant="overline">Results: {this.state.length}</Typography>
                 </Grid>
+ 
                 <div className="word-item-container">
                     {this.state.items.map((item) => (
                         <WordItem 
@@ -92,8 +93,7 @@ class Word extends Component {
                             item={item} 
                             deleteWord={this.deleteWord}/>
                     ))}
-                </div>  
-                
+                </div> 
             </Grid>
         )
     }
